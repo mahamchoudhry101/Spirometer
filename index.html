@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpiroTrack Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>SpiroTrack</h1>
+      <p class="subtitle">Spirometer Monitoring Dashboard</p>
+    </div>
+    <div class="device-status connected" id="deviceStatus">Device Connected</div>
+  </header>
+
+  <main class="dashboard">
+    <section class="card chart-card">
+      <h2>Airflow vs Time</h2>
+      <canvas id="airflowChart"></canvas>
+    </section>
+
+    <section class="card chart-card">
+      <h2>Volume vs Time</h2>
+      <canvas id="volumeChart"></canvas>
+    </section>
+
+    <section class="card metrics-card">
+      <h2>Key Metrics</h2>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span>FEV1 (L)</span>
+          <strong id="fev1">0.00</strong>
+        </div>
+        <div class="metric-box">
+          <span>FVC (L)</span>
+          <strong id="fvc">0.00</strong>
+        </div>
+        <div class="metric-box">
+          <span>PEF (L/min)</span>
+          <strong id="pef">0.00</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="card controls-card">
+      <h2>Controls</h2>
+      <div class="controls">
+        <button id="startBtn">Start Test</button>
+        <button id="stopBtn">Stop Test</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <p class="test-status" id="testStatus">Status: Idle</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
